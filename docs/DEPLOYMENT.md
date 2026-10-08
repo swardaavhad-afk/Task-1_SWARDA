@@ -5,8 +5,8 @@
 3. Copy this project to `C:\xampp\htdocs\contact-management`.
 4. Open `http://localhost/phpmyadmin/`.
 5. Import `database/schema.sql` using the Import tab. The script creates `contact_management`.
-6. Copy `.env.example` to `.env`. Use the local MySQL host, database, user, and password. A default XAMPP install commonly uses `127.0.0.1`, `contact_management`, `root`, and an empty password; do not use that default for an exposed production server.
-7. From the project root, run `php tools/create-admin.php` and enter a real local admin email and password of at least 12 characters.
+6. Copy `.env.example` to `.env`. Set `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, and `DB_PASS` for your local database. The default port is `3306`; if another MySQL service already uses it, run XAMPP MySQL on another port (for example `3307`) and set `DB_PORT` accordingly. For anything beyond an isolated local development environment, use a dedicated database account instead of `root`.
+7. From the project root, run `C:\xampp\php\php.exe tools\create-admin.php` and enter a real local admin email and password of at least 12 characters.
 8. Open `http://localhost/contact-management/` and submit a test enquiry.
 9. Open `http://localhost/contact-management/admin/login.php`, sign in, search, view, update, and delete the test record.
 

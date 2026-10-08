@@ -22,8 +22,8 @@ HTML5, CSS3, vanilla JavaScript, PHP 8+, PDO, MySQL, Apache/XAMPP, phpMyAdmin, a
 1. Copy the project to `C:\xampp\htdocs\contact-management`.
 2. Start Apache and MySQL from XAMPP.
 3. Open phpMyAdmin and import `database/schema.sql`.
-4. Copy `.env.example` to `.env`. For a default XAMPP install, `DB_USER=root` and an empty `DB_PASS` are common local values.
-5. Create an administrator from the project directory: `php tools/create-admin.php`.
+4. Copy `.env.example` to `.env`. For a default XAMPP install, `DB_USER=root` and an empty `DB_PASS` are common local values; set `DB_PORT` to the MySQL port if it is not using the default `3306`.
+5. Create an administrator from the project directory: `C:\xampp\php\php.exe tools\create-admin.php`.
 6. Open `http://localhost/contact-management/`.
 7. Open `http://localhost/contact-management/admin/login.php` to manage submissions.
 
@@ -54,7 +54,7 @@ The schema intentionally creates no administrator with a known password. Run `ph
 Run PHP syntax checks from the project root:
 
 ```powershell
-Get-ChildItem -Recurse -Filter *.php | ForEach-Object { php -l $_.FullName }
+Get-ChildItem -Recurse -Filter *.php | ForEach-Object { & C:\xampp\php\php.exe -l $_.FullName }
 ```
 
 Manually test valid and invalid submissions, direct unauthenticated admin access, login/logout, search, no-result search, detail viewing, status changes, delete confirmation, CSRF rejection, invalid IDs, and GET requests to action endpoints.

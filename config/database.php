@@ -32,11 +32,15 @@ function getDatabaseConnection(): PDO
 
     $environment = loadEnvironment(dirname(__DIR__) . DIRECTORY_SEPARATOR . '.env');
     $host = $environment['DB_HOST'] ?? '127.0.0.1';
+    $port = trim((string) ($environment['DB_PORT'] ?? '3306'));
+    if ($port === '' || filter_var($port, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 65535]]) === false) {
+        $port = '3306';
+    }
     $database = $environment['DB_NAME'] ?? 'contact_management';
     $username = $environment['DB_USER'] ?? 'root';
     $password = $environment['DB_PASS'] ?? '';
 
-    $dsn = sprintf('mysql:host=%s;dbname=%s;charset=utf8mb4', $host, $database);
+    $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', $host, $port, $database);
     $pdo = new PDO($dsn, $username, $password, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

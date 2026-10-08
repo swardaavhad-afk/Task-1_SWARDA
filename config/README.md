@@ -1,1 +1,1 @@
-Copy the project root `.env.example` to `.env` and set local database values. This directory contains only shared application configuration and should not contain credentials in version control.
+Copy the project root `.env.example` to `.env` and set local database values, including `DB_PORT` if the database is not listening on port `3306`. This directory contains only shared application configuration and should not contain credentials in version control.
