@@ -27,6 +27,13 @@ HTML5, CSS3, vanilla JavaScript, PHP 8+, PDO, MySQL, Apache/XAMPP, phpMyAdmin, a
 6. Open `http://localhost/contact-management/`.
 7. Open `http://localhost/contact-management/admin/login.php` to manage submissions.
 
+## Local links
+
+- Application: [http://localhost/contact-management/](http://localhost/contact-management/)
+- Admin panel: [http://localhost/contact-management/admin/login.php](http://localhost/contact-management/admin/login.php)
+- phpMyAdmin: [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
+- Database: `contact_management`
+
 ## Structure
 
 - `config/`: application constants and the shared PDO connection.

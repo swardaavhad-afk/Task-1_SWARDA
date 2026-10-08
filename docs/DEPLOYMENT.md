@@ -10,6 +10,13 @@
 8. Open `http://localhost/contact-management/` and submit a test enquiry.
 9. Open `http://localhost/contact-management/admin/login.php`, sign in, search, view, update, and delete the test record.
 
+## Working local links
+
+- Application: [http://localhost/contact-management/](http://localhost/contact-management/)
+- Admin login: [http://localhost/contact-management/admin/login.php](http://localhost/contact-management/admin/login.php)
+- Database management: [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/)
+- MySQL database name: `contact_management`
+
 ## Common deployment issues
 
 - Apache will not start: check whether ports 80 or 443 are occupied and change the Apache port or stop the conflicting service.
