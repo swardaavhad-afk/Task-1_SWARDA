@@ -3,8 +3,11 @@
 declare(strict_types=1);
 
 const APP_NAME = 'Contact Management';
-const BASE_URL = '/contact-management';
 const SESSION_NAME = 'contact_management_session';
+
+$requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: '';
+$baseUrl = str_starts_with($requestPath, '/contact-management') ? '/contact-management' : '';
+define('BASE_URL', $baseUrl);
 
 const ENQUIRY_TYPES = [
     'General Enquiry',
